@@ -2,41 +2,44 @@
 # -*- coding: UTF-8 -*-
 
 def fatorial(n):
-	if n == 0 or n == 1:
-		return 1
-	else:
-		return n * fatorial(n-1)
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * fatorial(n-1)
+
+def media(v):
+    return sum(v)/len(v)
 
 def arranjo(n, p):
-	return fatorial(n) / fatorial(n-p)
+    return fatorial(n) / fatorial(n-p)
 
 def arranjo_rep(n, p):
-	return pow(n, p)
+    return pow(n, p)
 
 def combinacao(n, p):
-	return arranjo(n, p) / fatorial(p)
+    return arranjo(n, p) / fatorial(p)
 
 def combinacao_rep(n, p):
-	return combinacao(n+p-1,p)
+    return combinacao(n+p-1,p)
 
 def permutacao(n):
-	return fatorial(n)
+    return fatorial(n)
 
 def permutacao_rep(n, r):
-	#r é um array
-	n = fatorial(n)
-	for i in r:
-		n /= fatorial(i)
-	return n
+    #Variavel r como um array
+    n = fatorial(n)
+    for i in r:
+        n /= fatorial(i)
+    return n
 
 def permutacao_circular(n):
-	return fatorial(n-1)
+    return fatorial(n-1)
 
-#Exemplos
-print (arranjo(10,2))
-print (arranjo_rep(10,2))
-print (combinacao(10,2))
-print (combinacao_rep(10,2))
-print (permutacao(10))
-print (permutacao_rep(10,[3,2]))
-print (permutacao_circular(10))
+def desvio_medio(v):
+    return media([abs(i - media(v)) for i in v])
+
+def variancia(v):
+    return media([pow(i - media(v), 2) for i in v])
+
+def desvio_padrao(v):
+    return pow(variancia(v), .5)
