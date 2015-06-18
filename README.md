@@ -24,3 +24,7 @@ As funções contidas no arquivo lhe permitem calcular:
     - Simples
     - Com Repetição
     - Circular
+
+## Contribua
+
+Sinta-se livre para contribuir com melhorias no código - https://github.com/eltonvs/estatistica-probabilidade
