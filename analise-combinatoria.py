@@ -10,6 +10,25 @@ def fatorial(n):
 def media(v):
     return sum(v)/len(v)
 
+def moda(v):
+    b, modas = 2, []
+    for i in v:
+        a = v.count(i)
+        if a > b:
+            b = a
+            modas = [i]
+        elif a == b and i not in modas:
+            modas.append(i)
+            modas.sort()
+    return modas
+
+def mediana(v):
+    v.sort()
+    if len(v) % 2 == 0:
+        return media([v[int(len(v)/2) - 1], v[int(len(v)/2)]])
+    else:
+        return v[int(len(v)/2)]
+
 def arranjo(n, p):
     return fatorial(n) / fatorial(n-p)
 
@@ -26,7 +45,6 @@ def permutacao(n):
     return fatorial(n)
 
 def permutacao_rep(n, r):
-    #Variavel r como um array
     n = fatorial(n)
     for i in r:
         n /= fatorial(i)
