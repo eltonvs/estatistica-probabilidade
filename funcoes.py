@@ -63,4 +63,4 @@ def permutacao_rep(n, r):
     return n
 
 def permutacao_circular(n):
-    return fatorial(n - 1)
+    return permutacao(n - 1)
