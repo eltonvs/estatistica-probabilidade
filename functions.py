@@ -10,11 +10,10 @@ def moda(v):
     for i in v:
         a = v.count(i)
         if a > b:
-            b = a
-            modas = [i]
+            b, modas = a, [i]
         elif a == b and i not in modas:
             modas.append(i)
-            modas.sort()
+    modas.sort()
     return modas
 
 def mediana(v):
