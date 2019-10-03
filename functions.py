@@ -24,6 +24,9 @@ def mediana(v):
         return v[int(len(v) / 2)]
 
 #Medidas de Dispersão
+def amplitude(v):
+    return max(v) - min(v)
+
 def desvio_medio(v):
     return media([abs(i - media(v)) for i in v])
 
